@@ -154,7 +154,21 @@
         chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
       }
       function pay() {
-        window.open("https://its500.com/foolpay?code=cbe94c")
+        $.ajax({
+          url: "https://pay.its500.com/order/createOrder",
+          type: "POST",
+          datatype: "json",
+          header: {"Payment-Key":"71e717b96fd0","Payment-Secret":"9fdd29c5bbec4e8e9ecc4f48095ec35a"},
+          data:{"price":1,"name":"key","other":"zzfpage-wxpay"},
+          success: function (data) {
+            alert("下单成功🥳")
+            window.open(data)
+          },
+          error: function (data) {
+            alert("下单失败")
+          },
+        })
+        //window.open("https://its500.com/foolpay?code=cbe94c")
       }
     </script>
   </body>
