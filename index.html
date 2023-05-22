@@ -89,6 +89,7 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
+  <body onload="c()">
   <body>
     <div class="chat-container">
       <div class="chat-header">
@@ -105,12 +106,20 @@
     </div>
     <button id="pay" onclick="pay()">充值💰</button>
     <script>
+      function c(){
+        localStorage.setItem("new", "0")
+      }
       function sendMessage() {
-        var con = []
+        if (localStorage.getItem("new") == "0"){
+          var con = []
+          console.log(1)
+          localStorage.setItem("new", "1")
+        }
+        
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "") {
           addUserMessage(userInput);
-          con.append({"role": "user", "content": userInput})
+          con.push({"role": "user", "content": userInput})
         }
         document.getElementById("seed").disabled = true;
         document.getElementById("user-input").value = "";
@@ -124,10 +133,10 @@
           },
           data: JSON.stringify({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: userInput }],
+            messages: con,
           }),
           success: function (data) {
-            con.append({"role": "assistant", "content": data.choices[0].message.content})
+            con.push({"role": "assistant", "content": data.choices[0].message.content})
             console.log(data);
             addBotMessage(data.choices[0].message.content);
             console.log("success");
