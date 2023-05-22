@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>人机对话聊天</title>
+    <style>
+      /* 在这里添加自定义的CSS样式 */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      .chat-container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-header {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .chat-header h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .chat-body {
+        padding: 20px;
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      .chat-message {
+        margin-bottom: 20px;
+      }
+
+      .user-message {
+        background-color: #dff3fd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .bot-message {
+        background-color: #e8e8e8;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .chat-input {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .chat-input input {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .chat-input button {
+        padding: 10px 20px;
+        margin-left: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+      }
+      /*pay样式*/
+      #pay {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 5%;
+        left: 95%;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h1>人机对话聊天</h1>
+      </div>
+      <div class="chat-body" id="chat-body">
+        <!-- 对话消息将在这里动态添加 -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="请输入消息" />
+        <button onclick="sendMessage()" id="seed">发送</button>
+      </div>
+      <!--充值代币按钮-->
+    </div>
+    <button id="pay" onclick="pay()">充值💰</button>
+    <script>
+      function sendMessage() {
+        var userInput = document.getElementById("user-input").value;
+        if (userInput !== "") {
+          addUserMessage(userInput);
+        }
+        document.getElementById("seed").disabled = true;
+        document.getElementById("user-input").value = "";
+        $.ajax({
+          url: "https://oa.api2d.net/v1/chat/completions",
+          type: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
+          },
+          data: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: userInput }],
+          }),
+          success: function (data) {
+            console.log(data);
+            addBotMessage(data.choices[0].message.content);
+            console.log("success");
+            document.getElementById("seed").disabled = false;
+          },
+          error: function (data) {
+            console.log(data);
+            document.getElementById("seed").disabled = false;
+            addBotMessage("对话失败，请重试");
+          },
+        });
+      }
+
+      function addUserMessage(message) {
+        var chatBody = document.getElementById("chat-body");
+        var userMessage = document.createElement("div");
+        userMessage.classList.add("chat-message", "user-message");
+        userMessage.textContent = message;
+        chatBody.appendChild(userMessage);
+        chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+      }
+      function addBotMessage(message) {
+        var chatBody = document.getElementById("chat-body");
+        var botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message");
+        botMessage.textContent = message;
+        chatBody.appendChild(botMessage);
+        chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+      }
+      function pay() {
+        window.open("https://its500.com/foolpay?code=cbe94c")
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付完成✅</title>
+    <style>
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <body onload="randomString()">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>支付完成✅</h1>
+        </div>
+        <div class="chat-body">
+            <div class="chat-message bot-message">
+                <div class="chat-message-content">
+                    <h3 id="key"></h3>
+                </div>
+            </div>
+            <h4>感谢您的支持</h4>
+        </div>
+        <script>
+            function randomString(e) {
+                if (localStorage.getItem("order_id") != ""){
+                    e = e || 32;
+                    var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
+                    a = t.length,
+                    n = "";
+                    for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+                    document.getElementById("key").textContent = "你的key是---->" + n + "<-----请务必保存";
+                    localStorage.clear()
+                }
+                else{
+                    alert("请先支付")
+                }
+            }
+        </script>
+</body>
+</html>
