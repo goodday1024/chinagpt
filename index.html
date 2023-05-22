@@ -106,12 +106,15 @@
     <button id="pay" onclick="pay()">充值💰</button>
     <script>
       function sendMessage() {
+        var con = []
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "") {
           addUserMessage(userInput);
+          con.push({"role": "user", "content": userInput})
         }
         document.getElementById("seed").disabled = true;
         document.getElementById("user-input").value = "";
+        
         $.ajax({
           url: "https://oa.api2d.net/v1/chat/completions",
           type: "POST",
@@ -124,6 +127,7 @@
             messages: [{ role: "user", content: userInput }],
           }),
           success: function (data) {
+            con.push({"role": "assistant", "content": data.choices[0].message.content})
             console.log(data);
             addBotMessage(data.choices[0].message.content);
             console.log("success");
