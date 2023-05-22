@@ -163,7 +163,12 @@
           success: function (data) {
             alert("下单成功🥳")
             console.log(data)
-            window.open(data)
+            let sourceCode = data;
+            let newWindow = window.open("", "新窗口", "width=600,height=600");
+            newWindow.document.open();
+            newWindow.document.write('<pre>' + sourceCode + '</pre>');
+            newWindow.document.close();
+            
           },
           error: function (data) {
             alert("下单失败")
