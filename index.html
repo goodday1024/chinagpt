@@ -155,9 +155,9 @@
       }
       function pay() {
         $.ajax({
-          url: "https://pay.its500.com/order/createOrder",
+          url: "http://api-1xktq5isjqbk.zhifu.fm.it88168.com/api/startOrder",
           type: "POST",
-          datatype: "json",
+          datatype: "query",
           headers: {"Payment-Key":"71e717b96fd0","Payment-Secret":"9fdd29c5bbec4e8e9ecc4f48095ec35a"},
           data:{"price":1,"name":"key","other":"zzfpage-wxpay"},
           success: function (data) {
