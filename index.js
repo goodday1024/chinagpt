@@ -96,6 +96,8 @@ function sendImage() {
           success: function (data) {
             console.log(data);
             addBotImage(data.data[0]);
+            console.log(data.data[0])
+            console.log(data[0])      
             console.log("success");
             document.getElementById("seed").disabled = false;
           },
