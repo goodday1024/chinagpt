@@ -92,6 +92,19 @@
         width: 100px;
         height: 50px;
       }
+      #Image{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 3%;
+        left: 95%;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+        width: 200px;
+        height: 150px;
+      }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
@@ -100,6 +113,7 @@
     <div class="chat-container">
       <div class="chat-header">
         <h1>人机对话聊天</h1>
+        <button id = "Image">Image<button>
       </div>
       <div class="chat-body" id="chat-body">
         <!-- 对话消息将在这里动态添加 -->
