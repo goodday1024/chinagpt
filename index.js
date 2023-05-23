@@ -1,5 +1,6 @@
+var con[20]
 function sendMessage() {
-        var con = con
+        
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "") {
           addUserMessage(userInput);
