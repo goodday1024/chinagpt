@@ -71,7 +71,7 @@ function sendImage() {
         
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "" && con.length <= 20) {
-          addUserImage(userInput)
+          addUserText(userInput)
         }
         else{
           alert("内容为空或者已达上限")
