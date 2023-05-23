@@ -8,6 +8,7 @@ function sendMessage() {
           
         }
         else{
+          alert("内容为空或者已达上限")
           return false
         }
         document.getElementById("seed").disabled = true;
