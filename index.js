@@ -35,3 +35,20 @@ function sendMessage() {
         });
         console.log(con)
       }
+      function addUserMessage(message) {
+        var chatBody = document.getElementById("chat-body");
+        var userMessage = document.createElement("div");
+        userMessage.classList.add("chat-message", "user-message");
+        userMessage.textContent = message;
+        chatBody.appendChild(userMessage);
+        chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+      }
+      function addBotMessage(message) {
+        var chatBody = document.getElementById("chat-body");
+        var botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message");
+        botMessage.textContent = message;
+        chatBody.appendChild(botMessage);
+        chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+      }
+}
