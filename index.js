@@ -118,8 +118,8 @@ function addBotImage(message) {
         var chatBody = document.getElementById("chat-body");
         var botMessage = document.createElement("div");
         botMessage.classList.add("chat-message", "bot-message");
-        var Image.src = message
-        botMessage.appendChild(Image);
+        botMessage.src = message
+        botMessage.appendChild(botMessage);
         chatBody.appendChild(botMessage);
         chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
 }
