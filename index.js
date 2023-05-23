@@ -95,7 +95,7 @@ function sendImage() {
           }),
           success: function (data) {
             console.log(data);
-            addBotImage(data[0].url);
+            addBotImage(data[0]);
             console.log("success");
             document.getElementById("seed").disabled = false;
           },
