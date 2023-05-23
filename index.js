@@ -35,7 +35,7 @@ function sendMessage() {
           error: function (data) {
             console.log(data);
             document.getElementById("seed").disabled = false;
-            addBotMessage("对话失败，请重试");
+            addErrorMessage("对话失败，请重试");
           },
         });
         console.log(con)
@@ -50,6 +50,14 @@ function addUserMessage(message) {
         chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
 }
 function addBotMessage(message) {
+        var chatBody = document.getElementById("chat-body");
+        var botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message");
+        botMessage.textContent = message;
+        chatBody.appendChild(botMessage);
+        chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+}
+function addErrorMessage(message) {
         var chatBody = document.getElementById("chat-body");
         var botMessage = document.createElement("div");
         botMessage.classList.add("chat-message", "bot-message");
