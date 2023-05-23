@@ -59,9 +59,9 @@ function addBotMessage(message) {
 }
 function addErrorMessage(message) {
         var chatBody = document.getElementById("chat-body");
-        var botMessage = document.createElement("div");
-        botMessage.classList.add("chat-message", "bot-message");
-        botMessage.textContent = message;
-        chatBody.appendChild(botMessage);
+        var errorMessage = document.createElement("div");
+        errorMessage.classList.add("chat-message", "error-message");
+        errorMessage.textContent = message;
+        chatBody.appendChild(errorMessage);
         chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
 }
