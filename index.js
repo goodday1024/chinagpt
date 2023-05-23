@@ -1,4 +1,4 @@
-var con[20]
+var con = []
 function sendMessage() {
         
         var userInput = document.getElementById("user-input").value;
