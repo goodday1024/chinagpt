@@ -38,7 +38,7 @@ function sendMessage() {
           },
         });
         console.log(con)
-        console.log(20 - con.length/2 + 1)
+        console.log(20 - (con.length+1)/2)
 }
 function addUserMessage(message) {
         var chatBody = document.getElementById("chat-body");
