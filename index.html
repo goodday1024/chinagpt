@@ -89,7 +89,6 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
-  <body onload="c()">
   <body>
     <div class="chat-container">
       <div class="chat-header">
@@ -106,16 +105,8 @@
     </div>
     <button id="pay" onclick="pay()">充值💰</button>
     <script>
-      function c(){
-        localStorage.setItem("new", "0")
-      }
       function sendMessage() {
-        if (localStorage.getItem("new") == "0"){
-          var con = []
-          console.log(1)
-          localStorage.setItem("new", "1")
-        }
-        
+        var con = con
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "") {
           addUserMessage(userInput);
