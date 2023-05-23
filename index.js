@@ -5,6 +5,7 @@ function sendMessage() {
         if (userInput !== "" && con.length <= 20) {
           addUserMessage(userInput);
           con.push({"role": "user", "content": userInput})
+          console.log(20 - con.length)
         }
         else{
           return false
