@@ -34,7 +34,6 @@ function sendMessage() {
           },
         });
         console.log(con)
-      }
 }
 function addUserMessage(message) {
         var chatBody = document.getElementById("chat-body");
