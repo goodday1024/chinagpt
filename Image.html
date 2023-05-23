@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>人机对话聊天</title>
+    <style>
+      /* 在这里添加自定义的CSS样式 */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+
+      .chat-container {
+        max-width: 500px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chat-header {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .chat-header h1 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .chat-body {
+        padding: 20px;
+        height: 300px;
+        overflow-y: scroll;
+      }
+
+      .chat-message {
+        margin-bottom: 20px;
+      }
+
+      .user-message {
+        background-color: #dff3fd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .bot-message {
+        background-color: #e8e8e8;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .error-message {
+        background-color: #FFB7C5;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      
+      .chat-input {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .chat-input input {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .chat-input button {
+        padding: 10px 20px;
+        margin-left: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+      }
+      /*pay样式*/
+      #pay {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 5%;
+        left: 95%;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <script src="index.js"></script>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h1>人机对话聊天</h1>
+        
+      </div>
+      <div class="chat-body" id="chat-body">
+        <!-- 对话消息将在这里动态添加 -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="请输入消息" />
+        <button onclick="sendImage()" id="seed">发送</button>
+      </div>
+      <!--充值代币按钮-->
+    </div>
+    <button id="pay" onclick="pay()">充值💰</button>
+    <script>
+      function pay() {
+        $.ajax({
+          url: "https://pay.its500.com/order/createOrder",
+          type: "POST",
+          datatype: "query",
+          headers: {"Payment-Key":"71e717b96fd0","Payment-Secret":"9fdd29c5bbec4e8e9ecc4f48095ec35a"},
+          data:{"price":1,"name":"key","other":"zzfpage-qqpay","reurl":"https://china-gpt.netlify.app/key"},
+          success: function (data) {
+            alert("下单成功🥳")
+            console.log(data)
+            let sourceCode = data;
+            let newWindow = window.open("", "新窗口", "width=600,height=600");
+            newWindow.document.open();
+            newWindow.document.write('<pre>' + sourceCode + '</pre>');
+            newWindow.document.close();
+            
+          },
+          error: function (data) {
+            alert("下单失败")
+          },
+        })
+        //window.open("https://its500.com/foolpay?code=cbe94c")
+      }
+    </script>
+  </body>
+</html>
