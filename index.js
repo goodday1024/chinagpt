@@ -4,7 +4,7 @@ function sendMessage() {
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "" && con.length <= 20) {
           addUserMessage(userInput);
-          con.push({"role": "user", "content": userInput})
+          
           
         }
         else{
@@ -26,6 +26,7 @@ function sendMessage() {
             messages: con,
           }),
           success: function (data) {
+            con.push({"role": "user", "content": userInput})
             con.push({"role": "assistant", "content": data.choices[0].message.content})
             console.log(data);
             addBotMessage(data.choices[0].message.content);
