@@ -2,9 +2,12 @@ var con = []
 function sendMessage() {
         
         var userInput = document.getElementById("user-input").value;
-        if (userInput !== "") {
+        if (userInput !== "" && con.length <= 20) {
           addUserMessage(userInput);
           con.push({"role": "user", "content": userInput})
+        }
+        else{
+          return false
         }
         document.getElementById("seed").disabled = true;
         document.getElementById("user-input").value = "";
