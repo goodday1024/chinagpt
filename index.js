@@ -81,15 +81,17 @@ function sendImage() {
         document.getElementById("user-input").value = "";
         
         $.ajax({
-          url: "https://oa.api2d.net/v1/chat/completions",
+          url: "https://openai.api2d.net/v1/images/generations",
           type: "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
           },
           data: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: con,
+            "prompt": userInput,
+            "n": 1,
+            "size": "256x256",
+            "response_format": "url"
           }),
           success: function (data) {
             console.log(data);
