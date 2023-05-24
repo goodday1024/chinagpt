@@ -152,7 +152,7 @@ function sendEdit() {
             Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
           },
           data: JSON.stringify({
-            “input”: userInput
+            “input”: userInput,
             "model": "text-davinci-edit-001",
             "n": 1,
             "instruction": "修改这个句子或这篇文章的错误"
