@@ -95,12 +95,10 @@ function sendImage() {
           }),
           success: function (data) {
             console.log(data);
-            
-            console.log(data[0].url)
-            console.log(data[0])   
-            addBotImage(data[0].url);
+            addBotImage(data[0]);
             console.log("success");
             document.getElementById("seed").disabled = false;
+            window.open(data[0])
           },
           error: function (data) {
             console.log(data);
@@ -120,10 +118,8 @@ function addUserText(message) {
 function addBotImage(message) {
         var chatBody = document.getElementById("chat-body");
         var botMessage = document.createElement("div");
-        var bigImg = document.createElement("div");
         botMessage.classList.add("chat-message", "bot-message");
-        bigImg.src = message
-        botMessage.appendChild(bigImg);
+        botMessage.appendChild("🔗:"message);
         chatBody.appendChild(botMessage);
         chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
 }
