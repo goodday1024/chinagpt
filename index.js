@@ -95,10 +95,10 @@ function sendImage() {
           }),
           success: function (data) {
             console.log(data);
-            addBotImage(data[0].url);
+            addBotImage(data.data[0].url);
             console.log("success");
             document.getElementById("seed").disabled = false;
-            window.open(data[0].url)
+            window.open(data.data[0].url)
           },
           error: function (data) {
             console.log(data);
