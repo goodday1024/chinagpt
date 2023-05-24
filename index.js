@@ -145,7 +145,7 @@ function sendEdit() {
         document.getElementById("user-input").value = "";
         
         $.ajax({
-          url: "https://openai.api2d.net/v1/images/generations",
+          url: "https://openai.api2d.net/v1/completions",
           type: "POST",
           headers: {
             "Content-Type": "application/json",
