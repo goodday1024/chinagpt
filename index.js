@@ -145,15 +145,16 @@ function sendEdit() {
         document.getElementById("user-input").value = "";
         
         $.ajax({
-          url: "https://openai.api2d.net/v1/completions",
+          url: "https://openai.api2d.net/v1/edits",
           type: "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
           },
           data: JSON.stringify({
-            "model": "text-davinci-003",
-            "prompt": userInput
+            "model": "text-davinci-edit-001",
+            "n": 3,
+            "instruction": userInput
           }),
           success: function (data) {
             console.log(data);
@@ -164,7 +165,7 @@ function sendEdit() {
           error: function (data) {
             console.log(data);
             document.getElementById("seed").disabled = false;
-            addErrorMessage("生成失败，请重试");
+            addErrorMessage("修改失败，请重试");
           },
         });
 }
