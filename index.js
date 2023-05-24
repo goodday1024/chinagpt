@@ -157,7 +157,7 @@ function sendEdit() {
           }),
           success: function (data) {
             console.log(data);
-            addBotEdit(data.choices[0].message.content);
+            addBotEdit(data.choices[0].message.text);
             console.log("success");
             document.getElementById("seed").disabled = false;
           },
