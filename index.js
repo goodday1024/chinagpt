@@ -155,7 +155,7 @@ function sendEdit() {
             “input”: userInput,
             "model": "text-davinci-edit-001",
             "n": 1,
-            "instruction": "修改这个句子或这篇文章的错误"
+            "instruction": "修改这个句子或这篇文章的错误",
           }),
           success: function (data) {
             console.log(data);
