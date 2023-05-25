@@ -2,7 +2,9 @@ var con = []
 var n = 0
 var sk = ""
 function sendMessage() {
-  key()
+  while(sk == ""){
+    pay()
+  }
   var userInput = document.getElementById("user-input").value;
   if (userInput !== "" && con.length <= 20) {
     addUserMessage(userInput);
