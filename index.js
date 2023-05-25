@@ -211,6 +211,7 @@ function key() {
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
           if (" " + sk == key) {
+            sk == key
             localStorage.setItem("sk", sk)
             alert("密钥正确")
             console.log("密钥正确")
