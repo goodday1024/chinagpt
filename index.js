@@ -10,6 +10,9 @@ function sendMessage() {
   }
   else {
     alert("内容为空或者已达上限")
+    if (con.length <= 20 && localStorage.getItem("sk") == null){
+      pay()
+    }
     return false
   }
   document.getElementById("seed").disabled = true;
