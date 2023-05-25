@@ -10,9 +10,6 @@ function sendMessage() {
   }
   else {
     alert("内容为空或者已达上限")
-    if (sk == null || sk == "" || sk == " "){
-      key() 
-    }
     return false
   }
   document.getElementById("seed").disabled = true;
