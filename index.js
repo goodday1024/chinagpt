@@ -9,6 +9,9 @@ function sendMessage() {
     con.push({ "role": "user", "content": userInput })
   }
   else {
+    if (localStorage.getItem("sk") == null){
+      key()
+    }
     alert("内容为空或者已达上限")
     return false
   }
@@ -208,7 +211,7 @@ function key() {
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
           if (" " + sk == key) {
-            localStorage.setItem("sk", sk)
+            localStorage.setItem("sk", key)
             alert("密钥正确")
             console.log("密钥正确")
             return true
