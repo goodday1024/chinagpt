@@ -4,7 +4,7 @@ var sk = ""
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
-  if (userInput !== "" && con.length <= 20 && sk != "") {
+  if (userInput !== "" && con.length <= 20 && sk !== null) {
     addUserMessage(userInput);
     con.push({ "role": "user", "content": userInput })
   }
