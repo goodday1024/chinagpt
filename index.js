@@ -226,8 +226,4 @@ function key() {
       }
     })
   }
-  else{
-    sk = localStorage.getItem("sk")
-    alert("密钥已填入")
-  }
 }
