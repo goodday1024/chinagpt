@@ -222,4 +222,7 @@ function key() {
       }
     })
   }
+  else{
+    sk = localStorage.getItem("sk")
+  }
 }
