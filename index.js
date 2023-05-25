@@ -196,7 +196,7 @@ function addErrorEdit(message) {
   chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
 }
 function key() {
-  if (sk == "" && localStorage.getItem("sk") == null || "" || " ") {
+  if (sk == "" && localStorage.getItem("sk") == null) {
     sk = prompt("请输入密钥")
     $.ajax({
       url: "https://chnkfdq5g6h5fqe8sg9g.baseapi.memfiredb.com/storage/v1/object/sign/key/%5BGPT%E5%AF%86%E9%92%A5%5D-100%E6%9D%A1-%E5%85%A8%E9%83%A8%E5%8D%A1%E5%AF%86-20230525121002.txt?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJrZXkvW0dQVOWvhumSpV0tMTAw5p2hLeWFqOmDqOWNoeWvhi0yMDIzMDUyNTEyMTAwMi50eHQiLCJpYXQiOjE2ODUwMTQ3NzgsImV4cCI6MjAwMDM3NDc3OH0.x7CjwHL6PiVl9y0LPoNr6EUlu_k2WDjmBP6GRrHh4pY",
