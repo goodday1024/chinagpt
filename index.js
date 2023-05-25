@@ -17,7 +17,7 @@ function sendMessage() {
                                 for (var i = 0;i<arr.length;i++){
                                         if (key == i){
                                                 alert("key正确")
-                                                localStorage.getItem("key": "1");
+                                                localStorage.getItem("key", "1")
                                         }
                                         else{
                                                 alert("key错误")
