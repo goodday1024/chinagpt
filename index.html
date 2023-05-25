@@ -114,27 +114,7 @@
     <button id="pay" onclick="pay()">充值💰</button>
     <script>
       function pay() {
-        $.ajax({
-          url: "https://pay.its500.com/order/createOrder",
-          type: "POST",
-          datatype: "query",
-          headers: {"Payment-Key":"71e717b96fd0","Payment-Secret":"9fdd29c5bbec4e8e9ecc4f48095ec35a"},
-          data:{"price":1,"name":"key","other":"zzfpage-qqpay","reurl":"https://china-gpt.netlify.app/key"},
-          success: function (data) {
-            alert("下单成功🥳")
-            console.log(data)
-            let sourceCode = data;
-            let newWindow = window.open("", "新窗口", "width=600,height=600");
-            newWindow.document.open();
-            newWindow.document.write('<pre>' + sourceCode + '</pre>');
-            newWindow.document.close();
-            
-          },
-          error: function (data) {
-            alert("下单失败")
-          },
-        })
-        //window.open("https://its500.com/foolpay?code=cbe94c")
+        window.open("https://www.qiyuanpay.com/mall/?link=m646e058926c35 ")
       }
     </script>
   </body>
