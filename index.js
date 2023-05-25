@@ -1,6 +1,32 @@
 var con = []
 function sendMessage() {
+        if (localStorage.getItem("key") == 0){
+                var key = prompt("key")
+                $.ajax({
+                        url: "http://124.220.208.244:8888/files?action=GetFileBody",
+                        type: "POST",
+                        headers:{"Content-Type":"application/x-www-form-urlencoded"},
+                        data: JSON.stringify({
+                                path: "/www/wwwroot/key/key.txt"
+                        }),
+                        success: function(data){
+                                let arr = [];
+                                for (var i = 0;i<data.size;i++){
+                                        arr = message.split('/r/n ');
+                                }
+                                for (var i = 0;i<arr.length;i++){
+                                        if (key == i){
+                                                alert("key正确")
+                                                localStorage.getItem("key": "1");
+                                        }
+                                        else{
+                                                alert("key错误")
+                                        }
+                        }
+        }
         
+                        
+             
         var userInput = document.getElementById("user-input").value;
         if (userInput !== "" && con.length <= 20) {
           addUserMessage(userInput);
