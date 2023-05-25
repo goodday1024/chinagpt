@@ -1,6 +1,7 @@
 var con = []
+var n = 0
 function sendMessage() {
-        if (localStorage.getItem("key") == 0){
+        if (n == 0){
                 var key = prompt("key")
                 $.ajax({
                         url: "http://124.220.208.244:8888/files?action=GetFileBody",
@@ -18,6 +19,7 @@ function sendMessage() {
                                         if (key == i){
                                                 alert("key正确")
                                                 localStorage.getItem("key", "1")
+                                                n = 1
                                         }
                                         else{
                                                 alert("key错误")
