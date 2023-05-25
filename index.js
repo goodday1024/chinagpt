@@ -208,21 +208,15 @@ function key() {
         //遍历并判断是否与输入一样
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
-          console.log(key)
           if (" " + sk == key) {
             localStorage.setItem("sk", sk)
             alert("密钥正确")
             console.log("密钥正确")
-            console.log(data)
             return true
           }
         }
-        console.log(data)
         alert("密钥错误")
         return false
-      },
-      error: function (data) {
-        console.log(data);
       }
     })
   }
