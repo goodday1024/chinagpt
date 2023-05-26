@@ -32,7 +32,8 @@ function sendMessage() {
     }),
     success: function (data) {
       count -= 1
-      localStorage.setItem("count", string(count))
+      localStorage.setItem("count", String(count))
+      console.log(count)
       con.push({ "role": "assistant", "content": data.choices[0].message.content })
       console.log(data);
       addBotMessage(data.choices[0].message.content);
