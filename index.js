@@ -1,6 +1,7 @@
 var con = []
 var n = 0
 var sk = ""
+var count = 0
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
@@ -30,12 +31,14 @@ function sendMessage() {
       messages: con,
     }),
     success: function (data) {
-
+      count -= 1
+      localStorage.setItem("count", string(count))
       con.push({ "role": "assistant", "content": data.choices[0].message.content })
       console.log(data);
       addBotMessage(data.choices[0].message.content);
       console.log("success");
       document.getElementById("seed").disabled = false;
+      
     },
     error: function (data) {
       con.pop()
@@ -213,6 +216,7 @@ function key() {
           if (" " + sk == key) {
             localStorage.setItem("sk", key)
             localStorage.setItem("count", "100")
+            count = parseInt(localStorage.getItem("count"))
             alert("密钥正确")
             console.log("密钥正确")
             return true
