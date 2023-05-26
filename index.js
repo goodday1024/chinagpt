@@ -1,7 +1,7 @@
 var con = []
 var n = 0
 var sk = ""
-var count = 0
+var count = parseInt(localStorage.getItem("count"))
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
