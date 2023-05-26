@@ -72,6 +72,7 @@ function addBotMessage(message) {
   botMessage.textContent = message;
   chatBody.appendChild(botMessage);
   chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+  document.getElementById("title").textContent = localStorage.getItem("count") + "/次"
 }
 function addErrorMessage(message) {
   var chatBody = document.getElementById("chat-body");
