@@ -9,7 +9,7 @@ function sendMessage() {
     con.push({ "role": "user", "content": userInput })
   }
   else {
-    if (localStorage.getItem("sk") == null || localStorage.getItem("sk") == ""){
+    if (localStorage.getItem("sk") == null || localStorage.getItem("sk") == "" || localStorage.getItem("sk") == " "){
       key()
     }
     alert("内容为空或者已达上限")
