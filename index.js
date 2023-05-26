@@ -13,6 +13,12 @@ function sendMessage() {
     if (localStorage.getItem("sk") == null || localStorage.getItem("sk") == "" || localStorage.getItem("sk") == " "){
       key()
     }
+    else if (parseInt(localStorage.getItem("count")) < 0){
+      localStorage.setItem("sk", null)
+      localStorage.setItem("count", "")
+      alert("您的密钥已用完，请重新购买")
+      key()
+    }
     alert("内容为空或者已达上限")
     return false
   }
