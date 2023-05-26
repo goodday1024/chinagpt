@@ -4,7 +4,7 @@ var sk = ""
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
-  if (userInput !== "" && con.length <= 20 && sk !== null && sk !== "") {
+  if (userInput !== "" && con.length <= 20 && sk !== null && sk !== "" && int(localStorage.getItem("count")) > 0) {
     addUserMessage(userInput);
     con.push({ "role": "user", "content": userInput })
   }
@@ -212,6 +212,7 @@ function key() {
           let key = arr[i].substr(0,arr[i].length-1)
           if (" " + sk == key) {
             localStorage.setItem("sk", key)
+            localStorage.setItem("count", "100")
             alert("密钥正确")
             console.log("密钥正确")
             return true
