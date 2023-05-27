@@ -272,6 +272,6 @@ window.addEventListener('storage', function () {
     localStorage.setItem("sk", sk)
     localStorage.setItem("new", "0")
     for (var i = 0;i<sks.length;i++){
-      localStorage.setItem("oldkey" + sks[i], sks[i])
+      localStorage.setItem("oldkey" + sks[i], " " + sks[i])
     }
  });
