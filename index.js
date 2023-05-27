@@ -49,7 +49,7 @@ function sendMessage() {
       }
       else{
         alert("token不足")
-      
+      }
     },
     error: function (data) {
       con.pop()
