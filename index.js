@@ -38,13 +38,17 @@ function sendMessage() {
     }),
     success: function (data) {
       count -= data.usage.total_tokens
-      localStorage.setItem("count", String(count))
-      console.log(count)
-      con.push({ "role": "assistant", "content": data.choices[0].message.content })
-      console.log(data);
-      addBotMessage(data.choices[0].message.content);
-      console.log("success");
-      document.getElementById("seed").disabled = false;
+      if(count > 0){
+        localStorage.setItem("count", String(count))
+        console.log(count)
+        con.push({ "role": "assistant", "content": data.choices[0].message.content })
+        console.log(data);
+        addBotMessage(data.choices[0].message.content);
+        console.log("success");
+        document.getElementById("seed").disabled = false;
+      }
+      else{
+        alert("token不足")
       
     },
     error: function (data) {
