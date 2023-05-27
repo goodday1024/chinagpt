@@ -16,6 +16,7 @@ function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
   if (userInput !== "" && con.length <= 20 && sk !== null && sk !== "" && count > 0) {
+    document.getElementById("setting").style.display = "none";
     addUserMessage(userInput);
     con.push({ "role": "user", "content": userInput })
   }
