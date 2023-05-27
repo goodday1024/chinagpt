@@ -249,8 +249,8 @@ function key() {
     sk = localStorage.getItem("sk")
   }
 }
-window.addEventListener('storage', function () {
+/*window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
     localStorage.setItem("oldkey", localStorage.getItem("sk"))
- });
+ });*/
