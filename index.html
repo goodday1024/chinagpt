@@ -57,6 +57,12 @@
         border-radius: 5px;
       }
       
+      .system-message {
+        background-color: #4caf50;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
       .chat-input {
         display: flex;
         margin-top: 20px;
@@ -92,6 +98,85 @@
         width: 100px;
         height: 50px;
       }
+      /*setting样式*/
+      #setting {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 15%;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #ffffff;
+        cursor: pointer;
+        width: 400px;
+        height: 200px;
+      }
+      #GPT{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 10%;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #4caf50;
+        cursor: pointer;
+        width: 55px;
+        height: 30px;
+      }
+      #lbxx{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 30%;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #4caf50;
+        cursor: pointer;
+        width: 70px;
+        height: 30px;
+      }
+      #hmbb{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 50%;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #4caf50;
+        cursor: pointer;
+        width: 70px;
+        height: 30px;
+      }
+      #student{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 70%;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #4caf50;
+        cursor: pointer;
+        width: 55px;
+        height: 30px;
+      }
+      #teacher{
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 90%;
+        border-radius: 5px;
+        border: none;
+        background-color: #ffffff;
+        color: #4caf50;
+        cursor: pointer;
+        width: 55px;
+        height: 30px;
+      }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
@@ -114,10 +199,20 @@
       <!--充值代币按钮-->
     </div>
     <button id="pay" onclick="pay()">充值💰</button>
+    <div id="setting">
+      <h3 id="stitle" style="position: absolute; transform: translate(-50%, -50%);top: 5%; left: 20%;">选择Jack身份</h3>
+      <button id="GPT" onclick="GPT()">GPT</button>
+      <button id="lbxx" onclick="lbxx()">蜡笔小新</button>
+      <button id="hmbb" onclick="hmbb()">海绵宝宝</button>
+      <button id="student" onclick="student()">鸣人</button>
+      <button id="teacher" onclick="teacher()">路飞</button>
+    </div>
     <script>
       function pay() {
         window.open("https://www.qiyuanpay.com/mall/?link=m646e058926c35 ")
       }
     </script>
+      
+
   </body>
 </html>
