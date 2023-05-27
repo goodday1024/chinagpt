@@ -17,8 +17,11 @@ function sendMessage() {
       localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
       localStorage.setItem("count", "0")
-      alert("您的密钥已用完，请重新购买")
+      count = 0
+      sk = ""
       key()
+      alert("您的密钥已用完，请重新购买")
+      
     }
     console.log(count)
     alert("内容为空或者已达上限")
