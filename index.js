@@ -16,7 +16,7 @@ function sendMessage() {
     else if (count <= 0){
       localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
-      localStorage.setItem("count", "")
+      localStorage.setItem("count", "0")
       alert("您的密钥已用完，请重新购买")
       key()
     }
@@ -50,7 +50,7 @@ function sendMessage() {
         document.getElementById("seed").disabled = false;
       }
       else{
-        localStorage.setItem("count", "")
+        localStorage.setItem("count", "0")
         localStorage.setItem("oldkey", localStorage.getItem("sk"))
         localStorage.setItem("sk", null)
         key()
