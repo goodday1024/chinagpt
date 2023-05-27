@@ -270,6 +270,7 @@ function key() {
 /*window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
+    localStorage.setItem("new", "0")
     for (int i = 0;i<sks.length;i++){
       localStorage.setItem("oldkey" + sks[i], sks[i])
     }
