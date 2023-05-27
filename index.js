@@ -53,6 +53,7 @@ function sendMessage() {
     }),
     success: function (data) {
       count -= data.usage.total_tokens
+      console.log(count)
       if(count > 0){
         localStorage.setItem("count", String(count))
         console.log(count)
