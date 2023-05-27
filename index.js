@@ -41,7 +41,7 @@ function sendMessage() {
   document.getElementById("user-input").value = "";
 
   $.ajax({
-    url: "https://oa.api2d.net/v1/chat/completions",
+    url: "https://openai.api2d.net/v1/chat/completions",
     type: "POST",
     datatype: "json",
     headers: {
