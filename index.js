@@ -48,7 +48,7 @@ function sendMessage() {
         document.getElementById("seed").disabled = false;
       }
       else{
-        alert("token不足")
+        alert("token不足，您的token已被清零")
       }
     },
     error: function (data) {
