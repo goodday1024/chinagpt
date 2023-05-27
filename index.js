@@ -309,7 +309,7 @@ function teacher(){
   document.getElementById("setting").style.display = "none";
 }
 function student(){
-  con.push({role: "system", content: "You are now a Uzumaki Naruto"})
+  con.push({role: "system", content: "You are now Uzumaki Naruto"})
   addSystemMessage("You are now Uzumaki Naruto")
   document.getElementById("setting").style.display = "none";
 }
