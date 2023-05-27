@@ -246,7 +246,7 @@ function key() {
             return true
           }
         }
-        alert("密钥错误")
+        alert("密钥错误或此密钥已经使用过了")
         return false
       }
     })
