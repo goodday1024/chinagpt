@@ -13,7 +13,7 @@ function sendMessage() {
     if (localStorage.getItem("sk") == null || localStorage.getItem("sk") == "" || localStorage.getItem("sk") == " "){
       key()
     }
-    else if (parseInt(localStorage.getItem("count")) < 0){
+    else if (parseInt(localStorage.getItem("count")) <= 0){
       localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
       localStorage.setItem("count", "")
