@@ -50,6 +50,7 @@ function sendMessage() {
     data: JSON.stringify({
       model: "gpt-3.5-turbo",
       messages: con,
+      stream: true
     }),
     success: function (data) {
       count -= data.usage.total_tokens
