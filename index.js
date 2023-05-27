@@ -55,7 +55,7 @@ function sendMessage() {
       }
       else{
         localStorage.setItem("count", "0")
-        localStorage.setItem("oldkey", localStorage.getItem("sk"))
+        localStorage.setItem("oldkey", " " + localStorage.getItem("sk"))
         localStorage.setItem("sk", null)
         key()
         alert("token不足，您的token已被清零")
