@@ -70,6 +70,7 @@ function sendMessage() {
         localStorage.setItem("oldkey" + sk, " " + localStorage.getItem("sk"))
         sks.push(sk)
         localStorage.setItem("sks", sks)
+        console.log(localStorage.getItem(sks))
         localStorage.setItem("sk", null)
         key()
         alert("token不足，您的token已被清零")
