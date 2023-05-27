@@ -2,6 +2,17 @@ var con = []
 var n = 0
 var sk = ""
 var count = parseInt(localStorage.getItem("count"))
+function newuser(){
+  if (localStorage.getItem("new") == null || localStorage.getItem("new") == "" || localStorage.getItem("new") == " "){
+    localStorage.setItem("count", "5000")
+    count = parseInt(localStorage.getItem("count"))
+    localStorage.setItem("sk", "testuser")
+    localStorage.setItem("new", "0")
+  }
+  else{
+    return false
+  }
+}
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
@@ -255,8 +266,8 @@ function key() {
     sk = localStorage.getItem("sk")
   }
 }
-/*window.addEventListener('storage', function () {
+window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
     localStorage.setItem("oldkey", localStorage.getItem("sk"))
- });*/
+ });
