@@ -268,11 +268,11 @@ function key() {
     sk = localStorage.getItem("sk")
   }
 }
-window.addEventListener('storage', function () {
+/*window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", sk)
     localStorage.setItem("new", "0")
     for (var i = 0;i<sks.length;i++){
       localStorage.setItem("oldkey" + sks[i], " " + sks[i])
     }
- });
+ });*/
