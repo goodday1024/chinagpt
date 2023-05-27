@@ -52,6 +52,7 @@ function sendMessage() {
         addBotMessage(data.choices[0].message.content);
         console.log("success");
         document.getElementById("seed").disabled = false;
+        console.log(localStorage.getItem("oldkey"))
       }
       else{
         localStorage.setItem("count", "0")
