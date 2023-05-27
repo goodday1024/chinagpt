@@ -1,6 +1,6 @@
 var con = []
 var n = 0
-var sk = ""
+var sk = localStorage.getItem("sk")
 var count = parseInt(localStorage.getItem("count"))
 var sks = String(localStorage.getItem("sks")).split(",")
 function newuser(){
