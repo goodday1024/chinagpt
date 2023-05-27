@@ -2,7 +2,7 @@ var con = []
 var n = 0
 var sk = ""
 var count = parseInt(localStorage.getItem("count"))
-var sks = Array(localStorage.getItem("sks"))
+var sks = String(localStorage.getItem("sks")).split(",")
 function newuser(){
   if (localStorage.getItem("new") != "0"){
     localStorage.setItem("sk", "testuser")
@@ -67,7 +67,7 @@ function sendMessage() {
         localStorage.setItem("count", "0")
         localStorage.setItem("oldkey", localStorage.getItem("sk"))
         console.log(localStorage.getItem("oldkey"))
-        localStorage.setItem("oldkey" + sk, " " + localStorage.getItem("sk"))
+        localStorage.setItem("oldkey" + sk, localStorage.getItem("sk"))
         sks.push(sk)
         localStorage.setItem("sks", sks)
         console.log(localStorage.getItem(sks))
@@ -250,7 +250,7 @@ function key() {
         //遍历并判断是否与输入一样
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
-          if (" " + sk == key && "  " + sk !== localStorage.getItem("oldkey" + sk)) {
+          if (" " + sk == key && " " + sk !== localStorage.getItem("oldkey" + sk)) {
             console.log(localStorage.getItem("oldkey" + sk))
             localStorage.setItem("sk", key)
             localStorage.setItem("count", "10000")
@@ -269,12 +269,12 @@ function key() {
     sk = localStorage.getItem("sk")
   }
 }
-/*window.addEventListener('storage', function () {
+window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", sk)
     localStorage.setItem("new", "0")
-    for (var i = 0;i<sks.length;i++){
+    for (var i = 0;i<=sks.length;i++){
       localStorage.setItem("oldkey" + sks[i], " " + sks[i])
       console.log(localStorage.getItem("oldkey" + sks[i]))
     }
- });*/
+ });
