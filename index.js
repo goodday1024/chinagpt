@@ -43,6 +43,7 @@ function sendMessage() {
   $.ajax({
     url: "https://oa.api2d.net/v1/chat/completions",
     type: "POST",
+    datatype: "json"
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
