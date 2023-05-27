@@ -267,5 +267,4 @@ function key() {
 window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
-    localStorage.setItem("oldkey", localStorage.getItem("sk"))
  });
