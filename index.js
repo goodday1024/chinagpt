@@ -16,6 +16,7 @@ function sendMessage() {
     else if (count <= 0){
       localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
+      console.log(localStorage.getItem("sk"))
       localStorage.setItem("count", "0")
       count = 0
       sk = ""
