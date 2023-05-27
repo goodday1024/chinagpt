@@ -37,7 +37,7 @@ function sendMessage() {
       messages: con,
     }),
     success: function (data) {
-      count -= 1
+      count -= data.usage.total_tokens
       localStorage.setItem("count", String(count))
       console.log(count)
       con.push({ "role": "assistant", "content": data.choices[0].message.content })
@@ -72,7 +72,7 @@ function addBotMessage(message) {
   botMessage.textContent = message;
   chatBody.appendChild(botMessage);
   chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
-  document.getElementById("title").textContent = "剩余：" + localStorage.getItem("count") + "/次"
+  document.getElementById("title").textContent = "剩余：" + localStorage.getItem("count") + "token"
 }
 function addErrorMessage(message) {
   var chatBody = document.getElementById("chat-body");
@@ -223,7 +223,7 @@ function key() {
           let key = arr[i].substr(0,arr[i].length-1)
           if (" " + sk == key) {
             localStorage.setItem("sk", key)
-            localStorage.setItem("count", "100")
+            localStorage.setItem("count", "3000")
             count = parseInt(localStorage.getItem("count"))
             alert("密钥正确")
             console.log("密钥正确")
