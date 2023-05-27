@@ -20,6 +20,7 @@ function sendMessage() {
       alert("您的密钥已用完，请重新购买")
       key()
     }
+    console.log(count)
     alert("内容为空或者已达上限")
     return false
   }
