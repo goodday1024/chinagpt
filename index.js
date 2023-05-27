@@ -105,6 +105,14 @@ function addBotMessage(message) {
   chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
   document.getElementById("title").textContent = "剩余：" + localStorage.getItem("count") + "token"
 }
+function addSystemMessage(message) {
+  var chatBody = document.getElementById("chat-body");
+  var systemMessage = document.createElement("div");
+  systemMessage.classList.add("chat-message", "system-message");
+  systemMessage.textContent = message;
+  chatBody.appendChild(systemMessage);
+  chatBody.scrollTop = chatBody.scrollHeight; // 自动滚动到底部
+}
 function addErrorMessage(message) {
   var chatBody = document.getElementById("chat-body");
   var errorMessage = document.createElement("div");
@@ -280,3 +288,28 @@ window.addEventListener('storage', function () {
       console.log(localStorage.getItem("oldkey" + sks[i]))
     }
  });
+function GPT(){
+  con.push({role: "system", content: "You are now GPT-3, a useful AI"})
+  addSystemMessage("You are now GPT-3, a useful AI")
+  document.getElementById("setting").style.display = none;
+}
+function lbxx(){
+  con.push({role: "system", content: "You are now Crayon Shin-chan"})
+  addSystemMessage("You are now Crayon Shin-chan")
+  document.getElementById("setting").style.display = "none";
+}
+function hmbb(){
+  con.push({role: "system", content: "You are now SpongeBob"})
+  addSystemMessage("You are now SpongeBob")
+  document.getElementById("setting").style.display = "none";
+}
+function teacher(){
+  con.push({role: "system", content: "Your are now Luffy"})
+  addSystemMessage("You are now Luffy")
+  document.getElementById("setting").style.display = "none";
+}
+function student(){
+  con.push({role: "system", content: "You are now a Uzumaki Naruto"})
+  addSystemMessage("You are now Uzumaki Naruto")
+  document.getElementById("setting").style.display = "none";
+}
