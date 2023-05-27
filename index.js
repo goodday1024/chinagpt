@@ -53,7 +53,6 @@ function sendMessage() {
       messages: con,
     }),
     success: function (data) {
-      console.log(data)
       count -= data.usage.total_tokens
       console.log(count)
       if(count > 0){
