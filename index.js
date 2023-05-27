@@ -48,7 +48,7 @@ function sendMessage() {
       Authorization: "Bearer fk202577-stNwU8r2VJSLlcJkOPqvWBmIaAK7NhiS",
     },
     data: JSON.stringify({
-      model: "gpt-3.5-turbo-0301",
+      model: "gpt-3.5-turbo",
       messages: con,
       stream: true
     }),
