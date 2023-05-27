@@ -248,7 +248,7 @@ function key() {
           let key = arr[i].substr(0,arr[i].length-1)
           if (" " + sk == key && "  " + sk !== localStorage.getItem("oldkey" + sk)) {
             localStorage.setItem("sk", key)
-            localStorage.setItem("count", "3000")
+            localStorage.setItem("count", "10000")
             count = parseInt(localStorage.getItem("count"))
             alert("密钥正确")
             console.log("密钥正确")
