@@ -2,6 +2,7 @@ var con = []
 var n = 0
 var sk = ""
 var count = parseInt(localStorage.getItem("count"))
+var sks = Array(localStorage.getItem("sks"))
 function newuser(){
   if (localStorage.getItem("new") != "0"){
     localStorage.setItem("sk", "testuser")
@@ -67,6 +68,8 @@ function sendMessage() {
         localStorage.setItem("oldkey", localStorage.getItem("sk"))
         console.log(localStorage.getItem("oldkey"))
         localStorage.setItem("oldkey" + sk, " " + localStorage.getItem("sk"))
+        sks.push(sk)
+        localStorage.setItem("sks", sks)
         localStorage.setItem("sk", null)
         key()
         alert("token不足，您的token已被清零")
@@ -267,8 +270,7 @@ function key() {
 /*window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
- });
-window.addEventListener('storage', function () {
-    localStorage.setItem(e.key, e.oldValue)
- 
+    for (int i = 0;i<sks.length;i++){
+      localStorage.setItem("oldkey" + sks[i], sks[i])
+    }
  });*/
