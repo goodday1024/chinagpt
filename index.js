@@ -57,7 +57,7 @@ function sendMessage() {
         localStorage.setItem("count", "0")
         localStorage.setItem("oldkey", localStorage.getItem("sk"))
         console.log(localStorage.getItem("oldkey"))
-        localStorage.setItem("oldkey", " " + localStorage.getItem("sk"))
+        localStorage.setItem("oldkey" + sk, " " + localStorage.getItem("sk"))
         localStorage.setItem("sk", null)
         key()
         alert("token不足，您的token已被清零")
@@ -237,7 +237,7 @@ function key() {
         //遍历并判断是否与输入一样
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
-          if (" " + sk == key && "  " + sk !== localStorage.getItem("oldkey")) {
+          if (" " + sk == key && "  " + sk !== localStorage.getItem("oldkey" + sk)) {
             localStorage.setItem("sk", key)
             localStorage.setItem("count", "3000")
             count = parseInt(localStorage.getItem("count"))
