@@ -2,6 +2,15 @@ var con = []
 var n = 0
 var sk = ""
 var count = parseInt(localStorage.getItem("count"))
+function newuser(){
+  if (localStorage.getItem("new") != "0"){
+    localStorage.setItem("sk", "testuser")
+    localStorage.setItem("count", "6000")
+    sk = "testuser"
+    count = parseInt(localStorage.getItem("count"))
+    localStorage.setItem("new", "0")
+  }
+}
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
