@@ -48,6 +48,9 @@ function sendMessage() {
         document.getElementById("seed").disabled = false;
       }
       else{
+        localStorage.setItem("count", "")
+        localStorage.setItem("sk", null)
+        pay()
         alert("token不足，您的token已被清零")
       }
     },
