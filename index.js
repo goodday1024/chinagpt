@@ -5,7 +5,7 @@ var count = parseInt(localStorage.getItem("count"))
 function sendMessage() {
   
   var userInput = document.getElementById("user-input").value;
-  if (userInput !== "" && con.length <= 20 && sk !== null && sk !== "" && parseInt(localStorage.getItem("count")) > 0) {
+  if (userInput !== "" && con.length <= 20 && sk !== null && sk !== "" && count > 0) {
     addUserMessage(userInput);
     con.push({ "role": "user", "content": userInput })
   }
@@ -13,7 +13,7 @@ function sendMessage() {
     if (localStorage.getItem("sk") == null || localStorage.getItem("sk") == "" || localStorage.getItem("sk") == " "){
       key()
     }
-    else if (parseInt(localStorage.getItem("count")) <= 0){
+    else if (count <= 0){
       localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
       localStorage.setItem("count", "")
