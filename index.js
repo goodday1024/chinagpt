@@ -14,6 +14,7 @@ function sendMessage() {
       key()
     }
     else if (parseInt(localStorage.getItem("count")) < 0){
+      localStorage.setItem("oldkey", localStorage.getItem("sk"))
       localStorage.setItem("sk", null)
       localStorage.setItem("count", "")
       alert("您的密钥已用完，请重新购买")
@@ -49,8 +50,9 @@ function sendMessage() {
       }
       else{
         localStorage.setItem("count", "")
+        localStorage.setItem("oldkey", localStorage.getItem("sk"))
         localStorage.setItem("sk", null)
-        pay()
+        key()
         alert("token不足，您的token已被清零")
       }
     },
@@ -228,7 +230,7 @@ function key() {
         //遍历并判断是否与输入一样
         for (let i = 0; i < arr.length; i++) {
           let key = arr[i].substr(0,arr[i].length-1)
-          if (" " + sk == key) {
+          if (" " + sk == key && sk !== localStorage.getItem("oldkey")) {
             localStorage.setItem("sk", key)
             localStorage.setItem("count", "3000")
             count = parseInt(localStorage.getItem("count"))
@@ -249,4 +251,5 @@ function key() {
 window.addEventListener('storage', function () {
     localStorage.setItem("count", String(count))
     localStorage.setItem("sk", key)
+    localStorage.setItem("oldkey", localStorage.getItem("sk"))
  });
