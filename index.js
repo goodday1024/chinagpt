@@ -292,7 +292,7 @@ window.addEventListener('storage', function () {
 function GPT(){
   con.push({role: "system", content: "You are now GPT-3, a useful AI"})
   addSystemMessage("You are now GPT-3, a useful AI")
-  document.getElementById("setting").style.display = none;
+  document.getElementById("setting").style.display = "none";
 }
 function lbxx(){
   con.push({role: "system", content: "You are now Crayon Shin-chan"})
