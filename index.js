@@ -291,7 +291,7 @@ window.addEventListener('storage', function () {
  });
 function GPT(){
   con.push({role: "system", content: "You are now Conan"})
-  addSystemMessage("You are now Detective Conan")
+  addSystemMessage("You are now Conan")
   document.getElementById("setting").style.display = "none";
 }
 function lbxx(){
