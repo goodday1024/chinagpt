@@ -290,8 +290,8 @@ window.addEventListener('storage', function () {
     }
  });
 function GPT(){
-  con.push({role: "system", content: "You are now GPT-4, a useful AI"})
-  addSystemMessage("You are now GPT-4, a useful AI")
+  con.push({role: "system", content: "You are now Detective Conan"})
+  addSystemMessage("You are now Detective Conan")
   document.getElementById("setting").style.display = "none";
 }
 function lbxx(){
